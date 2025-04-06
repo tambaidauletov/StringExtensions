@@ -27,4 +27,5 @@ steps:
     inputs:
       command: 'push'
       packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
-      publishVstsFeed: 'lab4feed'
+      publishVstsFeed: 'TamirlanBaidauletovLab4@lab4feed'
+
