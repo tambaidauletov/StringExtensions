@@ -2,7 +2,7 @@ trigger:
   - main
 
 pool:
-  name: Default  
+  name: Default
 
 variables:
   buildConfiguration: 'Release'
@@ -28,4 +28,3 @@ steps:
       command: 'push'
       packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
       publishVstsFeed: 'TamirlanBaidauletovLab4@lab4feed'
-
