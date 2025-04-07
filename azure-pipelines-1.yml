@@ -2,13 +2,14 @@ trigger:
   - master
 
 pool:
-  name: Default
+  name: Default  # Self-hosted agent
 
 variables:
   buildConfiguration: 'Release'
 
 steps:
   - task: UseDotNet@2
+    displayName: 'Install .NET 8 SDK'
     inputs:
       packageType: 'sdk'
       version: '8.0.x'
@@ -21,7 +22,7 @@ steps:
       projects: '**/*.csproj'
 
   - task: DotNetCoreCLI@2
-    displayName: 'Build'
+    displayName: 'Build Project'
     inputs:
       command: 'build'
       projects: '**/*.csproj'
@@ -31,7 +32,7 @@ steps:
     displayName: 'Pack NuGet package'
     inputs:
       command: 'pack'
-      packagesToPack: '**/*StringExtensionsLib.csproj'
+      packagesToPack: '**/StringExtensions.csproj'
       versioningScheme: 'off'
       configuration: 'Release'
       outputDir: '$(Build.ArtifactStagingDirectory)'
