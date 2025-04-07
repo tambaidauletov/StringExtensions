@@ -1,6 +1,9 @@
 trigger:
   - master
 
+# Это задаёт версию NuGet-пакета: 1.0.1.1, 1.0.1.2 и т.д.
+name: 1.0.1.$(Rev)
+
 pool:
   name: Default  # Self-hosted agent
 
