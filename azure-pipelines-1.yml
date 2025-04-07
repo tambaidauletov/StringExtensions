@@ -33,7 +33,7 @@ steps:
     inputs:
       command: 'pack'
       packagesToPack: '**/StringExtensions.csproj'
-      versioningScheme: 'off'
+      versioningScheme: 'byBuildNumber'
       configuration: 'Release'
       outputDir: '$(Build.ArtifactStagingDirectory)'
 
